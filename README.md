@@ -18,7 +18,7 @@ The backend is built using **ASP.NET Core**, a powerful, open-source framework f
 1. Install .NET SDK (version 7 or later): [Download .NET](https://dotnet.microsoft.com/en-us/download)
 2. Clone the repository:
    ```sh
-   git clone https://github.com/your-repo/timesheet-app.git
+   git clone https://github.com/MisterNicoLarson/Timesheet_Front_Back.git
    cd timesheet-app/backend
    ```
 3. Install dependencies:
