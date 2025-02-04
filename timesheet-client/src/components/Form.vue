@@ -19,7 +19,7 @@ export default defineComponent({
 
     const updateColumns = () => {
       const windowWidth = window.innerWidth;
-      let newColumns = Math.floor(windowWidth / 300); 
+      let newColumns = Math.floor(windowWidth / 320); 
 
       newColumns = Math.min(newColumns, 6);
 
@@ -80,7 +80,7 @@ export default defineComponent({
   .form-container {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 20px; 
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -89,7 +89,7 @@ export default defineComponent({
 
   .row {
     display: grid;
-    gap: 20px;
+    gap:20px; 
     align-items: start;
   }
 
@@ -99,5 +99,6 @@ export default defineComponent({
     gap: 8px;
     justify-content: center;
     align-items: center;
+    padding: 10px; 
   }
 </style>

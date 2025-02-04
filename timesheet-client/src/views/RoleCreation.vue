@@ -4,65 +4,64 @@ import FieldForm from '../components/FieldForm.vue';
 import Form from '../components/Form.vue';
 
 export default defineComponent({
-  name: 'About',
+  name: 'newEmployee',
   components: {
     FieldForm,
     Form
   },
   data() {
     return {
-      name: '',
-      email: ''
     };
   }
 });
 </script>
 
 <template>
-  <div class="about">
+  <h1>General Information</h1>
     <Form>
       <FieldForm
-        label="Prénom"
-        id="prenom"
+        label="First Name"
+        id="id_first_name"
         type="text"
         maxlength="20"
         required
       />
       <FieldForm
-        label="Nom"
-        id="nom"
+        label="Last Name"
+        id="id_last_name"
         type="text"
         maxlength="20"
         required
       />
       <FieldForm
-        label="Prénom"
-        id="prenom2"
+        label="Address"
+        id="id_address"
         type="text"
-        maxlength="20"
+        maxlength="50"
         required
       />
       <FieldForm
-        label="Date de la signature du contrat"
-        id="date"
-        type="date"
-        maxlength="20"
+        label="City"
+        id="id_address"
+        type="text"
+        maxlength="50"
         required
       />
       <FieldForm
-        label="Email"
-        id="email"
-        type="email"
+        label="Zip"
+        id="id_ZIP"
+        type="text"
+        maxlength="50"
         required
       />
       <FieldForm
-        label="Mot de passe"
-        id="password"
-        type="password"
+        label="Cell phone"
+        id="id_cell_phone"
+        type="text"
+        maxlength="50"
         required
       />
     </Form>
-  </div>
 </template>
 
 <style scoped>

@@ -1,21 +1,4 @@
-<template>
-    <nav>
-      <div class="navbar-container">
-        <div class="navbar-toggle" @click="toggleMenu">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
-        <div class="navbar-menu" :class="{ active: isMenuOpen }">
-            <router-link to="/" class="navbar-link">Home</router-link>
-            <router-link to="/AboutUs" class="navbar-link">About us</router-link>
-            <router-link to="/LoginPage" class="navbar-link">Login</router-link>
-        </div>
-      </div>
-    </nav>
-  </template>
-  
-  <script lang="ts">
+<script lang="ts">
   import { defineComponent } from 'vue';
   
   export default defineComponent({
@@ -30,9 +13,28 @@
       }
     }
   });
-  </script>
-  
-  <style scoped>
+</script>
+
+<template>
+  <nav>
+    <div class="navbar-container">
+      <div class="navbar-toggle" @click="toggleMenu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <div class="navbar-menu" :class="{ active: isMenuOpen }">
+          <router-link to="/" class="navbar-link">Home</router-link>
+          <router-link to="/NewEmployee" class="navbar-link">New employee</router-link>
+          <router-link to="/NewCustomer" class="navbar-link">New customer</router-link>
+          <router-link to="/RoleCRUD" class="navbar-link">Role</router-link>
+          <router-link to="/Timesheet" class="navbar-link">Timesheet</router-link>
+        </div>
+    </div>
+  </nav>
+</template>
+
+<style scoped>
   body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -113,5 +115,4 @@
       width: 100%;
     }
   }
-  </style>
-  
+</style>  

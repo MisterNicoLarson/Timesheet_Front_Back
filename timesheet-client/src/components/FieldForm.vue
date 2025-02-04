@@ -116,6 +116,5 @@
     border-radius: 5px;
     font-size: 16px;
     padding: 5px;
-    transition: border-color 0.3s;
   }
 </style>
