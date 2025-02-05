@@ -1,5 +1,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
+import FooterComponent from '../components/FooterComponent.vue';
+
 
 export default defineComponent({
   name: 'ForgotPassword',
@@ -10,9 +12,7 @@ export default defineComponent({
   },
   methods: {
     handleSubmit() {
-      // Handle password reset logic here
       console.log('Email:', this.email);
-      // You can add your password reset logic here, such as making an API call to send a reset link
     }
   }
 });
@@ -34,6 +34,7 @@ export default defineComponent({
         </form>
       </main>
     </div>
+    <FooterComponent/>
   </template>
   
   <style scoped>
