@@ -6,16 +6,18 @@ import NewEmployee from '../views/NewEmployee.vue';
 import NewCustomer from '../views/NewCustomer.vue';
 import RoleCreation from '../views/RoleCreation.vue';
 import Timesheet from '../views/Timesheet.vue'; 
+import Mission from '../views/Mission.vue';
 
 
 const routes = [
   { path: '/', component: Home },
   { path:'/NewEmployee',component: NewEmployee},
   { path:'/NewCustomer',component: NewCustomer},
-  { path:'/RoleCRUD',component: RoleCreation },
+  { path:'/Position',component: RoleCreation },
   { path:'/LoginPage',component: LoginPage},
   { path:'/ForgotPassword',component: ForgotPassword},
-  { path:'/Timesheet',component: Timesheet}
+  { path:'/Timesheet',component: Timesheet},
+  { path:'/Mission',component: Mission}
 ];
 
 const router = createRouter({

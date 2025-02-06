@@ -7,7 +7,6 @@
  * - type: "text" - Type of the field (text, email, password, date).
  * - maxlength: "20" - Maximum length of the field.
  * - v-model: "name" - Two-way data binding with the 'name' variable.
- * - placeholder: "" - Placeholder text (empty in this case).
  * - required: true - Indicates that the field is mandatory.
  *
  * Example usage:
@@ -17,7 +16,6 @@
  *   type="text"
  *   maxlength="50"
  *   v-model="firstName"
- *   placeholder="Enter your first name"
  *   required
  * />
  */
@@ -40,10 +38,6 @@
         required: true
       },
       modelValue: {
-        type: String,
-        default: ''
-      },
-      placeholder: {
         type: String,
         default: ''
       },
@@ -82,7 +76,6 @@
       :id="id"
       :value="modelValue"
       @input="updateValue"
-      :placeholder="placeholder"
       :required="required"
       :disabled="disabled"
       :maxlength="maxlength"
@@ -96,7 +89,6 @@
   .field-container {
     display: grid;
     grid-template-columns: 100px 1fr;
-    gap: 10px;
     align-items: center; 
     background-color: blanchedalmond;
     border-radius: 5px;

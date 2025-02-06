@@ -27,8 +27,9 @@
           <router-link to="/" class="navbar-link">Home</router-link>
           <router-link to="/NewEmployee" class="navbar-link">New employee</router-link>
           <router-link to="/NewCustomer" class="navbar-link">New customer</router-link>
-          <router-link to="/RoleCRUD" class="navbar-link">Role</router-link>
+          <router-link to="/Position" class="navbar-link">Position</router-link>
           <router-link to="/Timesheet" class="navbar-link">Timesheet</router-link>
+          <router-link to="/Mission" class="navbar-link">Mission</router-link>
         </div>
     </div>
   </nav>

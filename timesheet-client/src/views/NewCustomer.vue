@@ -1,92 +1,133 @@
 <script lang="ts">
-import { defineComponent } from 'vue';
-import FieldForm from '../components/FieldForm.vue';
-import Form from '../components/Form.vue';
+  import { defineComponent } from 'vue';
+  import FieldForm from '../components/FieldForm.vue';
+  import Form from '../components/Form.vue';
+  import CardUser from '../components/CardUser.vue'
+  import FooterComponent from '../components/FooterComponent.vue';
+  import ListCardUser from '../components/ListCardUser.vue';
+  import NavBar from '../components/NavBar.vue';
 
-export default defineComponent({
-  name: 'newCustomer',
-  components: {
-    FieldForm,
-    Form
-  },
-  data() {
-    return {
-    };
-  }
-});
+  export default defineComponent({
+    name: 'newEmployee',
+    components: {
+      NavBar,
+      CardUser,
+      ListCardUser,
+      FieldForm,
+      Form,
+      FooterComponent
+    },
+    data() {
+      return {
+      };
+    }
+  });
 </script>
 
 <template>
-  <h1>General Information</h1>
-    <Form>
-      <FieldForm
-        label="First Name"
-        id="id_first_name"
-        type="text"
-        maxlength="20"
-        required
-      />
-      <FieldForm
-        label="Last Name"
-        id="id_last_name"
-        type="text"
-        maxlength="20"
-        required
-      />
-      <FieldForm
-        label="Address"
-        id="id_address"
-        type="text"
-        maxlength="50"
-        required
-      />
-      <FieldForm
-        label="City"
-        id="id_address"
-        type="text"
-        maxlength="50"
-        required
-      />
-      <FieldForm
-        label="Zip"
-        id="id_ZIP"
-        type="text"
-        maxlength="50"
-        required
-      />
-      <FieldForm
-        label="Cell phone"
-        id="id_cell_phone"
-        type="text"
-        maxlength="50"
-        required
-      />
-    </Form>
+  <NavBar/>
+  <div class="container">
+    <div class="gauche">
+      <ListCardUser>
+        <CardUser
+          imgPath="AI_Photo/uk_perso.jpg"
+          lastName="Gontini"
+          firstName="Fabio"
+          position="CREOS"
+        />
+        <CardUser
+          imgPath="AI_Photo/uk_perso.jpg"
+          firstName="Hans"
+          lastName="Nuremberg"
+          position="Encevo"
+        />
+        <CardUser
+          imgPath="AI_Photo/uk_perso.jpg"
+          lastName="Willson"
+          firstName="Smith"
+          position="AXA"
+        />
+      </ListCardUser>
+    </div>
+    <div class="droite">
+      <h1>General Information</h1>
+      <Form>
+        <FieldForm
+          label="First Name"
+          id="id_first_name"
+          type="text"
+          maxlength="20"
+          required
+        />
+        <FieldForm
+          label="Last Name"
+          id="id_last_name"
+          type="text"
+          maxlength="20"
+          required
+        />
+        <FieldForm
+          label="Address"
+          id="id_address"
+          type="text"
+          maxlength="50"
+          required
+        />
+        <FieldForm
+          label="City"
+          id="id_address"
+          type="text"
+          maxlength="50"
+          required
+        />
+        <FieldForm
+          label="Zip"
+          id="id_ZIP"
+          type="text"
+          maxlength="50"
+          required
+        />
+        <FieldForm
+          label="Cell phone"
+          id="id_cell_phone"
+          type="text"
+          maxlength="50"
+          required
+        />
+        <FieldForm
+          label="Mail address"
+          id="id_mail_address"
+          type="text"
+          maxlength="150"
+          required
+        />
+        <FieldForm
+          label="Companie"
+          id="id_companie"
+          type="text"
+          maxlength="150"
+          required
+        />
+      </Form>
+    </div>
+  </div>
+  <FooterComponent/>
 </template>
 
 <style scoped>
-  .about {
-    font-family: Arial, sans-serif;
-    padding: 20px;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 16px;
   }
 
-  .about-header {
-    text-align: center;
-    padding: 50px 0;
-    background-color: #f8f9fa;
+  .gauche {
+    flex: 1;
+    margin-right: 16px;
   }
 
-  .about-header h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-  }
-
-  .about-main {
-    padding: 20px 0;
-  }
-
-  .about-main p {
-    font-size: 16px;
-    color: #6c757d;
+  .droite {
+    flex: 2;
   }
 </style>
