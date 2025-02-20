@@ -1,12 +1,23 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import FieldForm from '../components/FieldForm.vue';
+import FieldFormText from '../components/FieldFormText.vue';
 import Form from '../components/Form.vue';
 import FooterComponent from '../components/FooterComponent.vue';
-
+import NavBar from '../components/NavBar.vue';
+//@ts-ignore
+import VueCal from 'vue-cal';
+import 'vue-cal/dist/vuecal.css';
+  //https://vcalendar.io/getting-started/installation.html
+  //https://antoniandre.github.io/vue-cal/
+  //https://antoniandre.github.io/vue-cal-v4/
 export default defineComponent({
-  name: 'newEmployee',
+  name: 'TimeSheet',
   components: {
+    VueCal,
+    NavBar,
+    FooterComponent,
+    FieldFormText,
     FieldForm,
     Form
   },
@@ -18,76 +29,107 @@ export default defineComponent({
 </script>
 
 <template>
-  <h1>General Information</h1>
-    <Form>
-      <FieldForm
-        label="First Name"
-        id="id_first_name"
-        type="text"
-        maxlength="20"
-        required
-      />
-      <FieldForm
-        label="Last Name"
-        id="id_last_name"
-        type="text"
-        maxlength="20"
-        required
-      />
-      <FieldForm
-        label="Address"
-        id="id_address"
-        type="text"
-        maxlength="50"
-        required
-      />
-      <FieldForm
-        label="City"
-        id="id_address"
-        type="text"
-        maxlength="50"
-        required
-      />
-      <FieldForm
-        label="Zip"
-        id="id_ZIP"
-        type="text"
-        maxlength="50"
-        required
-      />
-      <FieldForm
-        label="Cell phone"
-        id="id_cell_phone"
-        type="text"
-        maxlength="50"
-        required
-      />
-    </Form>
+  <div class="NavBar">
+    <NavBar/>
+  </div>
+  <div class="main-content">
+    <div class="calendar">
+      <vue-cal
+        hide-view-selector
+        :time="false"
+        active-view="month"
+        xsmall>
+        <template #arrow-prev>
+          <i class="icon material-icons">arrow_back</i>
+        </template>
+        <template #arrow-next>
+          <i class="icon material-icons">arrow_forward</i>
+        </template>
+      </vue-cal>
+    </div>
+    <div class="addTimeline">
+      <div class="form-section">
+        <Form>
+        
+        <FieldForm
+          label="Duration"
+          id="id_duration"
+          type="heure"
+          maxlength="20"
+          required
+        />
+        <FieldFormText
+          label="Description"
+          id="id_description"
+          type="string"
+          maxlength="1000"
+          required
+        />
+        <FieldForm
+          label="Mission name"
+          id="id_mission_name"
+          type="text"
+          maxlength="20"
+          required
+        />
+      </Form>
+      </div>
+      <div class="week">
+        
+      </div>
+    </div>
+  </div>
+  <div class="FooterComponent">
+    <FooterComponent/>
+  </div>
 </template>
 
+
 <style scoped>
-  .about {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-  }
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+}
 
-  .about-header {
-    text-align: center;
-    padding: 50px 0;
-    background-color: #f8f9fa;
-  }
+.NavBar {
+  height: 10%;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+}
 
-  .about-header h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-  }
+.main-content {
+  display: flex;
+  flex: 1;
+}
 
-  .about-main {
-    padding: 20px 0;
-  }
+.calendar {
+  width: 30%;
+  border-right: 1px solid #dee2e6;
+  padding: 10px;
+}
 
-  .about-main p {
-    font-size: 16px;
-    color: #6c757d;
-  }
+.addTimeline {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-section {
+  flex: 1;
+  padding: 10px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.week {
+  padding: 10px;
+}
+
+.FooterComponent {
+  height: 10%;
+  background-color: #f8f9fa;
+  border-top: 1px solid #dee2e6;
+  margin-top: auto;
+}
 </style>

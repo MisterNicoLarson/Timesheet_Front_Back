@@ -4,18 +4,18 @@
     import Form from '../components/Form.vue';
     import FooterComponent from '../components/FooterComponent.vue';
     import NavBar from '../components/NavBar.vue';
-    import ListElement from '../components/ListElement.vue';
-    import CardRegularElement from '../components/CardRegularElement.vue';
+    import ListCard from '../components/ListCard.vue';
+    import CardElement from '../components/CardElement.vue';
 
     export default defineComponent({
         name: 'newEmployee',
         components: {
-        NavBar,
-        ListElement,
-        CardRegularElement,
-        FieldForm,
-        Form,
-        FooterComponent
+          ListCard,
+          CardElement,
+          NavBar,
+          FieldForm,
+          Form,
+          FooterComponent
         },
     });
 </script>
@@ -24,16 +24,16 @@
   <NavBar/>
   <div class="container">
     <div class="gauche">
-      <ListElement>
-        <CardRegularElement
-            name="RPA_Super_companie_S4_2025"
-            info="Solution"
+      <ListCard>
+        <CardElement
+          name_header="RPA_Super_companie_S4_2025"
+          subtitle_header="Solution"
         />
-        <CardRegularElement
-            name="Python_Cyber_API_Super_Companie_S4_2025"
-            info="Solution"
+        <CardElement
+          name_header="Python_Cyber_API_Super_Companie_S4_2025"
+          subtitle_header="Solution"
         />
-      </ListElement>
+      </ListCard>
     </div>
     <div class="droite">
       <Form>

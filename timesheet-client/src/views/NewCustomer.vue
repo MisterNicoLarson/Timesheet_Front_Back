@@ -2,17 +2,17 @@
   import { defineComponent } from 'vue';
   import FieldForm from '../components/FieldForm.vue';
   import Form from '../components/Form.vue';
-  import CardUser from '../components/CardUser.vue'
   import FooterComponent from '../components/FooterComponent.vue';
-  import ListCardUser from '../components/ListCardUser.vue';
   import NavBar from '../components/NavBar.vue';
+  import ListCard from '../components/ListCard.vue';
+  import CardElement from '../components/CardElement.vue';
 
   export default defineComponent({
     name: 'newEmployee',
     components: {
       NavBar,
-      CardUser,
-      ListCardUser,
+      CardElement,
+      ListCard,
       FieldForm,
       Form,
       FooterComponent
@@ -28,26 +28,26 @@
   <NavBar/>
   <div class="container">
     <div class="gauche">
-      <ListCardUser>
-        <CardUser
+      <ListCard>
+        <CardElement
           imgPath="AI_Photo/uk_perso.jpg"
-          lastName="Gontini"
-          firstName="Fabio"
-          position="CREOS"
+          complement_header="Gontini"
+          name_header="Fabio"
+          subtitle_header="CREOS"
         />
-        <CardUser
+        <CardElement
           imgPath="AI_Photo/uk_perso.jpg"
-          firstName="Hans"
-          lastName="Nuremberg"
-          position="Encevo"
+          name_header="Hans"
+          complement_header="Nuremberg"
+          subtitle_header="Encevo"
         />
-        <CardUser
+        <CardElement
           imgPath="AI_Photo/uk_perso.jpg"
-          lastName="Willson"
-          firstName="Smith"
-          position="AXA"
+          complement_header="Willson"
+          name_header="Smith"
+          subtitle_header="AXA"
         />
-      </ListCardUser>
+      </ListCard>
     </div>
     <div class="droite">
       <h1>General Information</h1>

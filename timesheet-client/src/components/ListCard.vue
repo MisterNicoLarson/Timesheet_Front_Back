@@ -1,18 +1,17 @@
 <script>
   export default {
-    name: 'ListElement'
+    name: 'MistCard'
   };
-
 </script>
 
 <template>
-    <div class="list-element">
+    <div class="list-card">
       <slot></slot>
     </div>
 </template>
   
 <style scoped>
-    .list-element {
+    .list-card {
         width: 350px;
         height: 80vh; 
         display: flex;

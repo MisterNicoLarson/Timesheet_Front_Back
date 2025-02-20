@@ -4,14 +4,14 @@
   import Form from '../components/Form.vue';
   import NavBar from '../components/NavBar.vue';  
   import FooterComponent from '../components/FooterComponent.vue';
-  import ListElement from '../components/ListElement.vue';
-  import CardRegularElement from '../components/CardRegularElement.vue'
+  import ListCard from '../components/ListCard.vue';
+  import CardElement from '../components/CardElement.vue';
 
   export default defineComponent({
     name: 'RoleCreation',
     components: {
-      ListElement,
-      CardRegularElement,
+      ListCard,
+      CardElement,
       FooterComponent,
       NavBar,
       FieldForm,

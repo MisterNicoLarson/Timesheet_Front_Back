@@ -4,19 +4,25 @@ export default {
   props: {
     imgPath: {
       type: String,
-      required: true
+      required: false, 
+      default: '' 
     },
-    firstName: {
+    name_header: {
       type: String,
       required: true
     },
-    lastName: {
+    complement_header: {
       type: String,
       required: true
     },
-    position: {
+    subtitle_header: {
       type: String,
-      required: true
+      required: true,
+    }
+  },
+  computed: {
+    hasImage() {
+      return this.imgPath && this.imgPath.trim() !== '';
     }
   },
   methods: {
@@ -29,12 +35,12 @@ export default {
 
 <template>
   <div class="card">
-    <div class="photo">
-      <img :src="imgPath" :alt="`${firstName} ${lastName}`" class="avatar">
+    <div v-if="hasImage" class="photo">
+      <img :src="imgPath" :alt="`${name_header} ${complement_header}`" class="avatar">
     </div>
-    <div class="user-info">
-      <h2 class="user-name">{{ firstName }} {{ toUpperCase(lastName) }}</h2>
-      <p class="user-position">{{ position }}</p>
+    <div class="info-card">
+      <h2 class="info-header">{{ name_header }} {{ toUpperCase(complement_header) }}</h2>
+      <p class="subtitle-header">{{ subtitle_header }}</p>
     </div>
   </div>
 </template>
@@ -50,7 +56,7 @@ export default {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 10px;
   width: 330px;
-  height: 100px;
+  min-height: 100px;
   margin: 10px;
 }
 
@@ -66,17 +72,17 @@ export default {
   object-fit: cover;
 }
 
-.user-info {
+.info-card {
   flex: 1;
 }
 
-.user-name {
+.info-header {
   margin: 0;
   font-size: 1.2em;
   color: #333;
 }
 
-.user-position {
+.subtitle-header {
   margin: 8px 0 0;
   font-size: 1em;
   color: #666;
@@ -87,11 +93,11 @@ export default {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 300px;
+    min-height: 300px;
   }
 
   .photo {
-    flex: 0 0 60px; 
+    flex: 0 0 60px;
     margin-right: 0;
     margin-bottom: 16px;
   }
@@ -103,7 +109,7 @@ export default {
     object-fit: cover;
   }
 
-  .user-info {
+  .info-card {
     text-align: center;
   }
 }
